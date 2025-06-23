@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Ferial Najiantabriz – Software Engineer and Data Scientist with expertise in machine learning, cloud computing, and full-stack development." />
+  <meta name="keywords" content="Ferial Najiantabriz, Resume, Machine Learning, Data Science, Azure, Python, Full-Stack, Natural Language Processing, LLM, Streamlit, Teaching Assistant, University of Oklahoma" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ferial Najiantabriz</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <!-- js-yaml library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+
+  <style>
+    :root {
+      --bg-gradient-start: #2f2f2f;
+      --bg-gradient-end: #3a3a3a;
+      --text-color: #dddddd;
+      --heading-color: #ffffff;
+      --link-color: #ffa500;
+      --border-color: #505050;
+      --paper-bg: #3a3a3a;
+      --font-family-base: "Crimson Pro", serif;
+      --font-family-mono: "Ubuntu Mono", monospace;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-end));
+      color: var(--text-color);
+      font-family: var(--font-family-base);
+      line-height: 1.6;
+    }
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+/* ============================
+   2. Top Navigation (Sticky)
+   Customized for Ferial Najiantabriz
+   ============================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+.navbar a {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 165, 0, 0.2);
+  color: var(--heading-color);
+}
+
+
+    /* ============================
+       3. Two‐Column Layout
+       ============================ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    /* Left Column: Profile, Social, Education & Code Animation */
+    .left-col {
+      flex: 0 0 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--paper-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border-color);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .profile-img:hover {
+      transform: scale(1.03);
+    }
+    .name {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      color: var(--heading-color);
+    }
+    .role {
+      font-size: 0.9rem;
+      color: #bbbbbb;
+      margin-bottom: 0.3rem;
+    }
+    /* New Location with clickable link */
+    .location {
+      font-size: 0.8rem;
+      color: #bbbbbb;
+      margin-bottom: 0.5rem;
+    }
+    .location a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .location a:hover {
+      color: var(--link-color);
+    }
+    .email {
+      font-family: var(--font-family-mono);
+      font-size: 0.85rem;
+      color: #bbbbbb;
+      margin-top: 0.5rem;
+    }
+    .social-icons {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    /* Social icons in dark green */
+    .social-icons a {
+      color: #006400;
+      font-size: 1.2rem;
+      transition: color 0.2s ease;
+    }
+    .social-icons a:hover {
+      color: var(--link-color);
+    }
+    /* Education block under profile image */
+    .education {
+      margin-top: 2rem;
+      width: 100%;
+      text-align: left;
+    }
+    .education h3 {
+      color: var(--heading-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .education ul {
+      list-style: disc;
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+    /* Simple Coding Animation (Typewriter Effect) */
+    .code-animation {
+      font-family: 'Courier New', monospace;
+      color: #00ff00; /* coding green */
+      font-size: 0.9rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 0.15em solid #00ff00;
+      margin-top: 1.5rem;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ff00; }
+    }
+
+    /* Right Column: Main Content */
+    .right-col {
+      flex: 1;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      margin-bottom: 0.8rem;
+      color: var(--heading-color);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.3rem;
+      display: inline-block;
+    }
+    .biography {
+      text-align: justify;    
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    /* Interests Section */
+    .interests ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+    }
+    /* Publications Section */
+    #publications-container {
+      margin-top: 1rem;
+    }
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .publication {
+      display: flex;
+      gap: 1.5rem;
+      background-color: var(--paper-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .publication:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+    .pub-image {
+      width: 130px;
+      height: 100px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+    .pub-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .pub-content .pub-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .pub-title a {
+      color: var(--heading-color);
+      transition: color 0.2s ease;
+    }
+    .pub-title a:hover {
+      color: var(--link-color);
+    }
+    .pub-authors {
+      font-size: 0.85rem;
+      color: #bbbbbb;
+      margin-bottom: 0.5rem;
+    }
+    .pub-meta {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .pub-links a {
+      display: inline-block;
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--link-color);
+      text-decoration: none;
+    }
+    .pub-links a:hover {
+      background-color: var(--link-color);
+      color: var(--bg-gradient-start);
+    }
+
+    /* ============================
+       4. Scroll to Top Button
+       ============================ */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50%;
+      background-color: var(--link-color);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+    }
+    #scrollTopBtn:hover {
+      opacity: 0.8;
+    }
+    #scrollTopBtn.show {
+      display: flex;
+    }
+
+    /* Responsive for smaller screens */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .left-col {
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#publications">Publications</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Two Column Layout -->
+  <div class="container" id="home">
+    <!-- Left Column: Profile, Social, Education, and Coding Animation -->
+    <div class="left-col">
+      <img src="assets/images/profile.jpg" alt="Profile Photo" class="profile-img" />
+      <div class="name">Ferial Najiantabriz</div>
+      <div class="role">Teaching Assistant in Computer Science</div>
+      <!-- Location as clickable Google Maps link -->
+      <p class="location">
+        <a href="https://www.google.com/maps/search/?api=1&query=Norman,+Oklahoma,+USA" target="_blank">
+          <i class="fas fa-map-marker-alt"></i> Norman, Oklahoma, USA
+        </a>
+      </p>
+      <p class="email">
+        <a href="mailto:najiantabriz.ferial@gmail.com">najiantabriz.ferial@gmail.com</a>
+      </p>
+      <div class="social-icons">
+        <a href="https://scholar.google.com/citations?user=acImM0IAAAAJ&hl=en" target="_blank">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+        <a href="assets/files/cv.pdf" target="_blank">
+			<i class="ai ai-cv"></i>
+		</a>
+        <a href="https://github.com/ferialnajiantabriz" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ferial-najiantabriz-365075128/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        
+      </div>
+      <!-- Education block -->
+      <div class="education">
+        <h3>Education</h3>
+        <ul>
+          <li>MSc in Computer Science, University of Oklahoma 2023 - 2025 </li>
+          <li>BSc in Software Engineering, Azad University, Iran 2009-2016</li>
+        </ul>
+      </div>
+      <!-- Simple Coding Animation -->
+      <div class="code-animation"> print("Hello, world!"));</div>
+    </div>
+
+    <!-- Right Column: Biography, Interests, Publications, Teaching, Contact -->
+    <div class="right-col">
+<!-- Biography Section -->
+<section class="section" id="biography">
+  <h2>Bio & Experience</h2>
+  <p class="biography">
+    My name is Ferial Najiantabriz, and I recently completed my Master’s in Computer Science at the University of Oklahoma. I have a solid background in both software engineering, computer science and Data Science, with practical experience in machine learning, full-stack development, and cloud computing. I enjoy working on projects that solve real-world problems using Python, Azure, and open-source technologies.
+  </p>
+  <p class="biography">
+    I started my journey in tech with a Bachelor's degree in Computer Engineering from Azad University in Tehran. During my time there, I discovered my interest in teaching and system development. I later worked as a Python instructor, support engineer, and technical analyst, where I gained valuable skills in automation, system design, and training.
+  </p>
+  <p class="biography">
+    At the University of Oklahoma, I contributed as a Teaching Assistant and student assistant, helping students understand complex topics like algorithms and cybersecurity. I also worked on various projects, including heart disease prediction using machine learning and building dashboards with Streamlit and R Shiny. My goal is to keep learning and building smart, scalable systems that make data more useful and accessible.
+  </p>
+</section>
+
+<!-- Interests Section -->
+<section class="section" id="interests">
+  <h2>Research Interests</h2>
+  <ul style="list-style: disc; margin-left: 1.5rem;">
+    <li>Machine Learning and Data Mining</li>
+    <li>Natural Language Processing (NLP)</li>
+    <li>Large Language Models and RAG (Retrieval-Augmented Generation)</li>
+    <li>Distributed and Cloud Computing (especially with Azure)</li>
+    <li>Deep Learning and Model Deployment</li>
+    <li>UI/UX Design for Intelligent Applications</li>
+    <li>Software Engineering and Full-Stack Development</li>
+  </ul>
+</section>
+
+<section class="section" id="Projects">
+  <h2>Active Researches</h2>
+  <ul style="list-style: disc; margin-left: 1.5rem;">
+    <li>
+      <strong>Heart Disease Prediction Using Data Mining Algorithms and Patient Segmentation</strong><br>
+      <em>Status: Completed (Fall 2024)</em><br>
+      <small>
+        <strong>Description:</strong> Built a machine learning pipeline using logistic regression, decision trees, and k-NN classifiers to predict heart disease risk. Developed a Streamlit app for model comparison and interactive visualization.
+      </small>
+    </li>
+    <li>
+      <strong>Interactive Analytics Dashboard for Real-Time Data Exploration</strong><br>
+      <em>Status: Completed (Spring 2024)</em><br>
+      <small>
+        <strong>Description:</strong> Created a dynamic dashboard using R Shiny to support exploratory data analysis with user-uploaded datasets. Integrated visualizations using ggplot2 and reactive components.
+      </small>
+    </li>
+    <li>
+      <strong>Capstone Management System (CMS)</strong><br>
+      <em>Status: Completed (Spring 2024)</em><br>
+      <small>
+        <strong>Description:</strong> Developed a student project portal using Flask and SQLAlchemy with Dockerized deployment. Included login/authentication and full-stack backend logic.
+      </small>
+    </li>
+    <li>
+      <strong>Job-Shop Accounting System</strong><br>
+      <em>Status: Completed (Fall 2023)</em><br>
+      <small>
+        <strong>Description:</strong> Designed a GUI-based accounting platform using Java and Azure SQL. Implemented relational schema design and dynamic form handling via JDBC.
+      </small>
+    </li>
+  </ul>
+</section>
+
+
+
+      <!-- Publications Section -->
+<section class="section" id="publications">
+  <h2>Selected Publications</h2>
+  <div id="publications-container">
+
+ 
+
+	<!-- Publication 1 -->
+	<div class="publication">
+	  <div class="pub-title">
+		<a href="https://www.semanticscholar.org/paper/A-New-Strategy-in-Trust-Based-Recommender-System-Sani-Tabriz/995b01f7049173e26a0d69525d309ec09d08ed1f" target="_blank">
+		  A new strategy in trust-based recommender system using k-means clustering
+		</a>
+	  </div>
+	  <div class="pub-authors">
+		N. Shahabi Sani, Ferial Najian Tabriz
+	  </div>
+	  <div class="pub-meta">
+		<span class="pub-badge">
+		  International Journal of Advanced Computer Science and Applications (IJACSA)
+		</span>
+	  </div>
+	  </div>
+	  <div class="pub-links">
+		<a href="path/to/your-paper2.pdf" target="_blank">PDF</a>
+		<a href="https://github.com/username/paper2-code" target="_blank">Code</a>
+	  </div>
+	
+
+
+    <!-- Add more .publication blocks as needed -->
+    
+  </div>
+</section>
+
+
+      
+
+      <!-- Contact Section -->
+      <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>
+          For inquiries, please email me at <a href="mailto:najiantabriz.ferial@gmail.com ">najiantabriz.ferial@gmail.com</a>. I look forward to connecting!
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" title="Scroll to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Publications Loader Script -->
+  <script>
+    async function parseAuthors(authors) {
+      if (!Array.isArray(authors)) return "";
+      return authors
+        .map((author, index) => {
+          const authorHTML = author.url
+            ? `<a href="${author.url}" target="_blank">${author.name}</a>`
+            : author.name;
+          return authorHTML + (index < authors.length - 1 ? ", " : "");
+        })
+        .join("");
+    }
+
+    async function loadPublications() {
+      try {
+        const response = await fetch("publications.yml");
+        if (!response.ok) throw new Error("Failed to load publications.yml");
+        const yamlText = await response.text();
+        const publications = jsyaml.load(yamlText).main;
+
+        const container = document.getElementById("publications-container");
+        container.innerHTML = "";
+
+        const listDiv = document.createElement("div");
+        listDiv.className = "publications-list";
+
+        for (const pub of publications) {
+          const pubDiv = document.createElement("div");
+          pubDiv.className = "publication";
+
+          let imageHtml = "";
+          if (pub.image && pub.image.length > 0) {
+            imageHtml = `
+              <div class="pub-image">
+                <img src="${pub.image}" alt="${pub.title}" onerror="this.style.display='none'">
+              </div>
+            `;
+          }
+
+          let awardsHtml = "";
+          if (pub.awards) {
+            awardsHtml = `
+              <div class="pub-awards">
+                ${pub.awards
+                  .map(
+                    (award) => `
+                  <span class="award-badge ${award.type}">
+                    ${
+                      award.type === "best-poster"
+                        ? '<i class="fas fa-award"></i>'
+                        : ""
+                    }
+                    ${
+                      award.type === "top-paper"
+                        ? '<i class="fas fa-star"></i>'
+                        : ""
+                    }
+                    ${award.text}
+                  </span>
+                `
+                  )
+                  .join("")}
+              </div>
+            `;
+          }
+
+          const authorsHtml = await parseAuthors(pub.authors);
+
+          pubDiv.innerHTML = `
+            ${imageHtml}
+            <div class="pub-content">
+              <div class="pub-title">
+                ${
+                  pub.pdf
+                    ? `<a href="${pub.pdf}" target="_blank">${pub.title}</a>`
+                    : pub.title
+                }
+              </div>
+              <div class="pub-authors">${authorsHtml}</div>
+              <div class="pub-meta">
+                <span class="pub-badge">${pub.conference || ""}</span>
+                ${awardsHtml}
+              </div>
+              <div class="pub-links">
+                ${
+                  pub.pdf
+                    ? `<a href="${pub.pdf}" target="_blank">PDF</a>`
+                    : ""
+                }
+                ${
+                  pub.page
+                    ? `<a href="${pub.page}" target="_blank">Project</a>`
+                    : ""
+                }
+                ${
+                  pub.code
+                    ? `<a href="${pub.code}" target="_blank">Code</a>`
+                    : ""
+                }
+              </div>
+            </div>
+          `;
+          listDiv.appendChild(pubDiv);
+        }
+
+        container.appendChild(listDiv);
+      } catch (error) {
+        console.error("Error loading publications:", error);
+        document.getElementById("publications-container").innerHTML =
+          "<p>Error loading publications. Please check the console for details.</p>";
+      }
+    }
+
+    // Scroll to Top Button functionality
+    window.addEventListener("scroll", () => {
+      const scrollBtn = document.getElementById("scrollTopBtn");
+      if (window.scrollY > 300) {
+        scrollBtn.classList.add("show");
+      } else {
+        scrollBtn.classList.remove("show");
+      }
+    });
+
+    document.getElementById("scrollTopBtn").addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Load publications on page load
+    window.addEventListener("DOMContentLoaded", loadPublications);
+  </script>
+  <!-- Footer or Last Updated Section -->
+  <footer style="text-align: center; padding: 1rem; margin-top: 2rem;">
+    <p>Last updated on: Jun 23, 2025</p>
+  </footer>
+</body>
+</html>
